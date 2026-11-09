@@ -1,0 +1,4 @@
+{"ts": "2026-11-08T10:00:00Z", "MESSAGE": "Failed password for invalid user admin from 192.0.2.10 port 50100 ssh2"}
+{"ts": "2026-11-08T10:01:00Z", "MESSAGE": "Failed password for invalid user admin from 192.0.2.10 port 50101 ssh2"}
+{"ts": "2026-11-08T10:02:00Z", "MESSAGE": "Failed password for invalid user admin from 192.0.2.10 port 50102 ssh2"}
+{"ts": "2026-11-08T10:03:00Z", "MESSAGE": "Accepted password for vboxuser from 192.168.56.1 port 50103 ssh2"}
