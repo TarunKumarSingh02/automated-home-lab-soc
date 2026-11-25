@@ -3,6 +3,9 @@ import sys
 import json
 import re
 import ipaddress
+from notifier import notify_alert
+from auto_response import record_auto_response
+from incident_store import save_alert
 from pathlib import Path
 from collections import defaultdict, deque
 from datetime import datetime, timedelta, timezone
@@ -79,11 +82,14 @@ for line in sys.stdin:
             "detected_at": timestamp.isoformat(),
             "description": "Repeated SSH login failures",
         }
-
+        if not save_alert(alert):
+            continue
         with output.open("a", encoding="utf-8") as file:
             file.write(json.dumps(alert) + "\n")
 
         last_alert[ip] = timestamp
+        record_auto_response(alert)
+        notify_alert(alert)
 
         print(
             f"[LIVE ALERT] {ip} | "

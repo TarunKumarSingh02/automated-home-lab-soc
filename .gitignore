@@ -1,11 +1,32 @@
+
+# Python virtual environment
 .venv/
-.env
+venv/
+
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+*.env
+
+# Local databases and runtime data
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Generated alerts and logs
+**/alerts/
 *.log
-.venv/
-__pycache__/
-*.pyc
-.env
-alerts/
 samples/ssh_live*
+
+# Backup files
+*.backup
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
